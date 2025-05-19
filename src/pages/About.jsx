@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import logo from "../assets/logo.png";
 
 const About = () => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const About = () => {
       <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
         <div className="w-full md:w-1/2" data-aos="fade-right">
           <img
-            src="https://images.unsplash.com/photo-1616077167444-5c2925f88f4f?auto=format&fit=crop&w=700&q=60"
+            src={logo}
             alt="Therapy session"
             className="rounded-xl shadow-lg"
           />

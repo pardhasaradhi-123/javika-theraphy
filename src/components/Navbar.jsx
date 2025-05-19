@@ -1,5 +1,5 @@
 import { FaHeart, FaBars, FaTimes } from "react-icons/fa";
-import logo from "../assets/pinnacle-logo9.jpg";
+import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import DonateModal from "../components/DonateModal";
@@ -19,9 +19,9 @@ export default function Navbar() {
 
   return (
     <header className="w-full shadow-md bg-white border-b-2 relative">
-      <div className="flex justify-between items-center px-4 md:px-8 py-3">
+      <div className="flex justify-around items-center px-4 md:px-8 py-3">
         <Link to="/">
-          <img src={logo} alt="Pinnacle Logo" className="h-14 md:h-20" />
+          <img src={logo} alt="Javika Theraphy Logo" className="h-24 md:h-32" />
         </Link>
 
         {/* Mobile menu button */}

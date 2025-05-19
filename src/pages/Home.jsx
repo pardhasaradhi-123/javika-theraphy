@@ -18,12 +18,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-background">
-      <section data-aos="fade-up">
+    <div className="bg-background overflow-hidden">
+      <section>
         <Hero />
       </section>
 
-      <section className="bg-yellow-50" data-aos="fade-right">
+      <section className="bg-yellow-50">
         <AboutSection />
       </section>
 
@@ -42,7 +42,7 @@ const Home = () => {
         <ContactCTA />
       </section> */}
 
-      <section data-aos="fade-up">
+      <section>
         <Services />
       </section>
 
