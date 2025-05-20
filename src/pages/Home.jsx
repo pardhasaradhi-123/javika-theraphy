@@ -9,6 +9,7 @@ import Techniques from "../components/Techniques";
 import HomeBenefits from "../components/HomeBenefits";
 import ParentRole from "../components/ParentRole";
 import TherapistRole from "../components/TherapistRole";
+import WhyChooseUs from "../components/WhyChooseUs";
 // import Testimonials from "../components/Testimonials";
 // import ContactCTA from "../components/ContactCTA";
 
@@ -28,6 +29,10 @@ const Home = () => {
       </section>
 
       <section>
+        <Techniques />
+      </section>
+
+      <section>
         <ParentRole />
       </section>
 
@@ -38,20 +43,16 @@ const Home = () => {
         <Testimonials />
       </section> */}
 
-      {/* <section className="py-12 bg-primary text-yellow-400" data-aos="fade-up">
-        <ContactCTA />
-      </section> */}
-
       <section>
         <Services />
       </section>
 
       <section>
-        <HomeBenefits />
+        <WhyChooseUs />
       </section>
 
       <section>
-        <Techniques />
+        <HomeBenefits />
       </section>
     </div>
   );

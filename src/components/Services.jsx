@@ -15,6 +15,11 @@ const services = [
       "https://media.istockphoto.com/id/1426218664/photo/child-playing-with-toy-pyramid-at-wooden-table-indoors-closeup-aba-therapy-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=rGNUD56VtBL1l0Td8tz6pnsPS_JTof8q6VnSFP1POTQ=",
   },
   {
+    name: "ABA Assessment for Autism",
+    image:
+      "https://plus.unsplash.com/premium_photo-1711555629283-366ea41f6772?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QUJBJTIwQXNzZXNzbWVudCUyMGZvciUyMEF1dGlzbXxlbnwwfHwwfHx8MA%3D%3D", // You can replace with a better-fitting image if you have one
+  },
+  {
     name: "Speech & Language Therapy",
     image:
       "https://plus.unsplash.com/premium_photo-1661724564774-69a5c92a56da?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3BlZWNoJTIwVGhlcmFweXxlbnwwfHwwfHx8MA%3D%3D",
