@@ -67,21 +67,18 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="py-16 px-16 mx-auto bg-gray-50 overflow-hidden">
-      <h2
-        className="text-3xl font-bold text-center text-blue-800 mb-4"
-        data-aos="fade-up"
-      >
-        Our Services
-      </h2>
-      <p
-        className="text-center text-gray-600 max-w-2xl mx-auto mb-12"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        At Pinnacle Blooms, we offer personalized programs that support children
-        and their families with industry-leading therapeutic services.
-      </p>
+    <section className="mx-auto bg-gray-50 overflow-hidden pb-20">
+      {/* Hero Section */}
+      <div className="bg-blue-800 p-10 mb-12">
+        <h2 className="text-3xl font-bold text-center text-white mb-4">
+          Our Services
+        </h2>
+        <p className="text-center text-gray-200 max-w-2xl mx-auto">
+          At Javika Therapy, we offer personalized programs that support
+          children and their families with industry-leading therapeutic
+          services.
+        </p>
+      </div>
 
       <div className="space-y-16">
         {servicesData.map((service, index) => {
@@ -96,11 +93,9 @@ const Services = () => {
             >
               {/* Image Blob */}
               <div className="relative w-full md:w-1/2 max-w-sm h-64">
-                {/* First blob - bigger size */}
-                <div className="absolute w-80 h-80 rounded-full bg-blue-100 blur-2xl animate-pulse z-0 top-0 left-1/2 -translate-x-1/2"></div>
-
-                {/* Second blob - bigger size */}
-                <div className="absolute w-72 h-72 rounded-full bg-blue-300 opacity-70 blur-3xl animate-pulse z-0 top-6 left-1/2 -translate-x-1/2"></div>
+                {/* Updated blobs with higher opacity */}
+                <div className="absolute w-80 h-80 rounded-full bg-blue-200 blur-2xl animate-pulse z-0 top-0 left-1/2 -translate-x-1/2"></div>
+                <div className="absolute w-72 h-72 rounded-full bg-blue-400 opacity-90 blur-3xl animate-pulse z-0 top-6 left-1/2 -translate-x-1/2"></div>
 
                 <img
                   src={service.image}

@@ -1,30 +1,36 @@
-import { FaHeart, FaBars, FaTimes } from "react-icons/fa";
+import { FaCalendarCheck, FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import DonateModal from "../components/DonateModal";
+import BookAppointment from "../components/BookAppointment ";
 
 export default function Navbar() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDonateOpen, setDonateOpen] = useState(false);
+  const [isBookOpen, setBookOpen] = useState(false);
 
   const navItems = [
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Services", path: "/services" },
+    { label: "Assessment", path: "/assessment" },
+    { label: "Career", path: "/career" },
     { label: "Contact", path: "/contact" },
   ];
 
   return (
     <header className="w-full shadow-md bg-white border-b-2 relative">
-      <div className="flex justify-around items-center px-4 md:px-8 py-3">
+      <div className="flex justify-around max-md:jusbe items-center px-4 md:px-8 py-3">
         <Link to="/">
-          <img src={logo} alt="Javika Theraphy Logo" className="h-24 md:h-32" />
+          <img
+            src={logo}
+            alt="Javika Therapy Logo"
+            className="h-16 w-28 sm:h-24 sm:w-36 md:h-32 md:w-40"
+          />
         </Link>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu toggle */}
         <button
           className="text-purple-800 text-2xl lg:hidden"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
@@ -50,14 +56,14 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop donate button */}
+        {/* Desktop book appointment button */}
         <div className="hidden lg:flex items-center gap-4">
           <button
-            onClick={() => setDonateOpen(true)}
-            className="flex items-center gap-2 bg-fuchsia-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-fuchsia-700 transition"
+            onClick={() => setBookOpen(true)}
+            className="flex items-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition"
           >
-            <FaHeart />
-            DONATE
+            <FaCalendarCheck />
+            Book Appointment
           </button>
         </div>
       </div>
@@ -80,19 +86,19 @@ export default function Navbar() {
 
           <button
             onClick={() => {
-              setDonateOpen(true);
+              setBookOpen(true);
               setMobileMenuOpen(false);
             }}
-            className="flex justify-center items-center gap-2 bg-fuchsia-600 text-white px-4 py-2 rounded-full w-full text-sm font-semibold hover:bg-fuchsia-700"
+            className="flex justify-center items-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-full w-full text-sm font-semibold hover:bg-blue-800"
           >
-            <FaHeart />
-            DONATE
+            <FaCalendarCheck />
+            Book Appointment
           </button>
         </div>
       )}
 
-      {/* Donate modal */}
-      <DonateModal isOpen={isDonateOpen} onClose={() => setDonateOpen(false)} />
+      {/* Book Appointment Modal */}
+      {isBookOpen && <BookAppointment onClose={() => setBookOpen(false)} />}
     </header>
   );
 }

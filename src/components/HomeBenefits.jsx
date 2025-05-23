@@ -68,7 +68,7 @@ export default function HomeBenefits() {
   }, []);
 
   return (
-    <section className="max-w-7xl rounded shadow-md mx-auto p-6 bg-indigo-50 my-8">
+    <section className="max-w-7xl mx-auto p-6 my-8">
       <h2 className="text-3xl font-bold mb-12 text-indigo-800 text-center">
         Benefits of Home-Based ABA Therapy
       </h2>

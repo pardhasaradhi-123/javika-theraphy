@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import BookAppointment from "../pages/BookAppointment ";
+import BookAppointment from "../components/BookAppointment ";
 
 const heroBackgrounds = [
   "https://leafwingcenter.org/wp-content/uploads/2021/03/aba-therapy-learner-2-1.jpeg",

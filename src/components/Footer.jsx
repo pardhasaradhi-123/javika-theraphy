@@ -39,11 +39,6 @@ const Footer = () => {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link to="/payment" className="hover:text-blue-400">
-                Book Appointment
-              </Link>
-            </li>
           </ul>
         </div>
 

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import { app } from "../db/db";
-import { collection, addDoc } from "firebase/firestore";
 
 const BookAppointment = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +6,7 @@ const BookAppointment = ({ onClose }) => {
     email: "",
     phone: "",
     date: "",
+    message: "", // added message field
   });
 
   const handleChange = (e) => {
@@ -28,13 +27,7 @@ const BookAppointment = ({ onClose }) => {
       currency: "INR",
       name: "Javika Therapy",
       description: "Appointment Booking",
-      handler: async function (response) {
-        // await addDoc(collection(app, "appointments"), {
-        //   ...formData,
-        //   paymentId: response.razorpay_payment_id,
-        //   amount: amount / 100,
-        //   createdAt: new Date(),
-        // });
+      handler: function (response) {
         alert("Appointment booked successfully!");
         onClose();
       },
@@ -114,6 +107,20 @@ const BookAppointment = ({ onClose }) => {
                 onChange={handleChange}
                 required
                 className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200"
+              />
+            </div>
+            {/* New message input spanning full width */}
+            <div className="sm:col-span-2">
+              <label className="block mb-1 text-sm font-medium">
+                Message (optional)
+              </label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200 resize-none"
+                placeholder="Any additional information or requests..."
               />
             </div>
           </div>

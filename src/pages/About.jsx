@@ -9,26 +9,25 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-white py-16 px-6 md:px-16 text-gray-800">
+    <section className="bg-white text-gray-800 pb-10">
       {/* Hero */}
-      <div className="text-center mb-16">
-        <h1
-          className="text-4xl md:text-5xl font-bold text-blue-800 mb-4"
-          data-aos="fade-down"
-        >
+      <div
+        className="text-center mb-16 py-20 px-6 rounded-lg"
+        style={{
+          background: "linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%)",
+        }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           About Javika Therapy
         </h1>
-        <p
-          className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
-          data-aos="fade-up"
-        >
+        <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
           Transforming lives through care, compassion, and child-centered
           therapies.
         </p>
       </div>
 
       {/* Founding Purpose */}
-      <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+      <div className="flex flex-col md:flex-row items-center gap-10 mb-20 px-20">
         <div className="w-full md:w-1/2" data-aos="fade-right">
           <img
             src={logo}
@@ -52,7 +51,7 @@ const About = () => {
       </div>
 
       {/* Our Mission */}
-      <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+      <div className="flex flex-col md:flex-row items-center gap-10 mb-20 px-16">
         <div
           className="w-full md:w-1/2 order-2 md:order-1"
           data-aos="fade-right"
@@ -81,7 +80,7 @@ const About = () => {
       </div>
 
       {/* Our Approach */}
-      <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+      <div className="flex flex-col md:flex-row items-center gap-10 mb-20 px-16">
         <div className="w-full md:w-1/2" data-aos="fade-right">
           <img
             src="https://plus.unsplash.com/premium_photo-1723741300671-60fa3ee0fc58?q=80&w=2038&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
