@@ -135,12 +135,9 @@ const CareerPage = () => {
         </h2>
         <p className="max-w-xl mx-auto mb-8 text-center text-gray-800">
           Please send your resume and a cover letter to{" "}
-          <a
-            href="mailto:careers@javikatherapy.org"
-            className="text-blue-700 underline"
-          >
-            careers@javikatherapy.org
-          </a>
+          <span className="text-blue-700 underline">
+            javikatherapy@gmail.com
+          </span>
           . We look forward to hearing from you!
         </p>
       </section>

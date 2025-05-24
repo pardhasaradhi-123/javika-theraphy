@@ -21,12 +21,12 @@ export default function Navbar() {
 
   return (
     <header className="w-full shadow-md bg-white border-b-2 relative">
-      <div className="flex justify-around max-md:jusbe items-center px-4 md:px-8 py-3">
+      <div className="flex justify-around max-md:justify-between items-center px-4 md:px-8 py-3">
         <Link to="/">
           <img
             src={logo}
             alt="Javika Therapy Logo"
-            className="h-16 w-28 sm:h-24 sm:w-36 md:h-32 md:w-40"
+            className="h-16 w-full sm:h-24 md:h-32"
           />
         </Link>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
             <Link
               key={label}
               to={path}
-              className={`hover:text-purple-600 transition ${
+              className={`hover:text-purple-600 transition tracking-wide ${
                 currentPath === path
                   ? "border-b-2 border-purple-800 font-bold"
                   : ""
