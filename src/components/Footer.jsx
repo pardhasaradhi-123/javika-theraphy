@@ -17,7 +17,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-3">Quick Tabs</h3>
           <ul className="space-y-2 text-sm">
             <li>
               <Link to="/" className="hover:text-blue-400">
@@ -50,7 +50,7 @@ const Footer = () => {
               <Phone size={16} /> +91 9876 543 210
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={16} /> support@javikatherapy.org
+              <Mail size={16} /> javikatherapy@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={16} /> Chennai, India
@@ -71,7 +71,7 @@ const Footer = () => {
               <Facebook size={20} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/javikatherapy/"
               target="_blank"
               rel="noreferrer"
               className="hover:text-pink-500"
