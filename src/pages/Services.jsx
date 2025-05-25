@@ -115,10 +115,58 @@ const servicesData = [
   },
 ];
 
+// TherapyOptions component
+const TherapyOptions = ({ therapies, therapyIcons }) => {
+  const handleClick = (title) => {
+    // Scroll smoothly to the section with the corresponding ID
+    const element = document.getElementById(
+      title.toLowerCase().replace(/\s+/g, "-")
+    );
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  return (
+    <section className="bg-white py-10">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {therapies.map((therapy, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center group cursor-pointer border rounded-lg p-4 border-transparent hover:border-pink-600 hover:bg-pink-50"
+              onClick={() => handleClick(therapy)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleClick(therapy);
+              }}
+            >
+              <div className="text-4xl mb-2 text-pink-600 group-hover:scale-110 transition-transform">
+                {therapyIcons[therapy]}
+              </div>
+              <span className="text-center text-md text-purple-700 capitalize group-hover:underline">
+                {therapy}
+              </span>
+              <span className="text-purple-700 text-xl mt-1">&gt;</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Services = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const therapies = servicesData.map((s) => s.title);
+  const therapyIcons = servicesData.reduce((acc, s) => {
+    acc[s.title] = s.icon;
+    return acc;
+  }, {});
 
   return (
     <section className="mx-auto bg-gray-50 overflow-hidden pb-20">
@@ -133,12 +181,16 @@ const Services = () => {
         </p>
       </div>
 
+      {/* TherapyOptions above Services */}
+      <TherapyOptions therapies={therapies} therapyIcons={therapyIcons} />
+
       <div className="space-y-20 max-md:px-5">
         {servicesData.map((service, index) => {
           const isEven = index % 2 === 0;
           return (
-            <div
-              key={index}
+            <section
+              key={service.title}
+              id={service.title.toLowerCase().replace(/\s+/g, "-")}
               className={`flex flex-col md:flex-row items-center ${
                 !isEven ? "md:flex-row-reverse" : ""
               } gap-8`}
@@ -171,7 +223,7 @@ const Services = () => {
                   </p>
                 ))}
               </div>
-            </div>
+            </section>
           );
         })}
       </div>

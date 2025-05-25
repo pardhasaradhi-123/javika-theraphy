@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion, AnimatePresence } from "framer-motion";
 
 const assessments = [
   {
@@ -72,92 +72,110 @@ The program emphasizes functional communication and social skills, which are cru
   },
 ];
 
-const contentVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+const getEmoji = (title) => {
+  if (title.includes("Denver")) return "👶";
+  if (title.includes("Basic Language")) return "🗣️";
+  if (title.includes("PEAK")) return "🌟";
+  if (title.includes("Functional Living")) return "🏠";
+  if (title.includes("VB-MAPP")) return "🧩";
+  return "📊"; // default
 };
 
-const AssessmentPage = () => {
-  const [selectedId, setSelectedId] = useState(assessments[0].id);
-
-  useEffect(() => {
-    AOS.init({ duration: 600, once: true });
-  }, []);
-
-  const selectedAssessment = assessments.find((a) => a.id === selectedId);
-
-  const paragraphs = selectedAssessment.detailed
-    .trim()
-    .split(/\n+/)
-    .filter(Boolean);
+// Component to scroll to sections
+const AssessmentOptions = ({ assessments }) => {
+  const handleClick = (title) => {
+    const element = document.getElementById(
+      title.toLowerCase().replace(/\s+/g, "-")
+    );
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200">
-      {/* Hero Section */}
-      <section className="mx-auto mb-12 py-20 bg-indigo-700 shadow-lg text-center text-white relative overflow-hidden">
-        {/* Optional background shape */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-gradient-to-tr from-indigo-900 via-indigo-700 to-indigo-600 rounded-3xl pointer-events-none"></div>
+    <section className="bg-white py-10">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {assessments.map((assessment, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center group cursor-pointer border rounded-lg p-4 border-transparent hover:border-blue-600 hover:bg-blue-50"
+              onClick={() => handleClick(assessment.title)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ")
+                  handleClick(assessment.title);
+              }}
+            >
+              <div className="text-4xl mb-2 text-blue-600 group-hover:scale-110 transition-transform">
+                {getEmoji(assessment.title)}
+              </div>
 
-        <h1 className="relative text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
-          Autism Assessment Tools
-        </h1>
-        <p className="relative max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed drop-shadow-md">
-          Explore comprehensive assessments designed to evaluate and support
-          developmental progress in children with autism spectrum disorder.
-          Learn about tailored interventions and tools that empower families and
-          professionals.
-        </p>
+              <span className="text-center text-md text-blue-700 capitalize group-hover:underline text-sm">
+                {assessment.title}
+              </span>
+              <span className="text-blue-700 text-xl mt-1">&gt;</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Assessments = () => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [id]);
+
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      <AssessmentOptions assessments={assessments} />
+      <section className="py-12 px-4">
+        <div className="max-w-6xl mx-auto space-y-16">
+          {assessments.map((assessment) => {
+            const slug = assessment.title.toLowerCase().replace(/\s+/g, "-");
+
+            return (
+              <div
+                key={slug}
+                id={slug}
+                className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row"
+                data-aos="fade-up"
+              >
+                <div className="md:w-1/2">
+                  <img
+                    src={assessment.image}
+                    alt={assessment.title}
+                    className="object-cover w-full h-64 md:h-full"
+                  />
+                </div>
+
+                <div className="p-6 md:w-1/2">
+                  <h2 className="text-2xl font-bold text-blue-700 mb-3 flex items-center gap-2">
+                    {assessment.title}
+                  </h2>
+                  <p className="text-gray-700 whitespace-pre-line text-justify">
+                    {assessment.detailed}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </section>
-
-      {/* Top navigation bar with headings */}
-      <nav className="max-w-7xl mx-auto flex space-x-8 border-b border-indigo-400 pb-4 overflow-x-auto">
-        {assessments.map(({ id, title }) => (
-          <button
-            key={id}
-            onClick={() => setSelectedId(id)}
-            className={`text-lg font-semibold cursor-pointer whitespace-normal leading-snug transition-colors duration-300 ${
-              selectedId === id
-                ? "text-indigo-900 border-b-4 border-indigo-700"
-                : "text-indigo-600 hover:text-indigo-900"
-            }`}
-            style={{ minWidth: "160px", textAlign: "center" }}
-          >
-            {title}
-          </button>
-        ))}
-      </nav>
-
-      {/* Detailed content section */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={selectedAssessment.id}
-          variants={contentVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          className="mt-10 max-w-7xl mx-auto p-8 flex flex-col md:flex-row items-start gap-8"
-        >
-          {/* Left image */}
-          <img
-            src={selectedAssessment.image}
-            alt={selectedAssessment.title}
-            className="w-full md:w-1/3 rounded-lg object-cover shadow-md"
-            loading="lazy"
-            data-aos="fade-right"
-          />
-
-          {/* Right detailed text */}
-          <div className="md:w-2/3 text-gray-900 leading-relaxed text-lg space-y-6">
-            {paragraphs.map((para, index) => (
-              <p key={index} data-aos="fade-left">
-                {para}
-              </p>
-            ))}
-          </div>
-        </motion.div>
-      </AnimatePresence>
     </div>
   );
 };
 
-export default AssessmentPage;
+export default Assessments;
