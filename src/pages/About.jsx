@@ -9,7 +9,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-white text-gray-800 pb-10">
+    <section className="bg-white text-gray-800 pb-10 overflow-hidden">
       {/* Hero */}
       <div
         className="text-center mb-16 py-20 px-6 rounded-lg"

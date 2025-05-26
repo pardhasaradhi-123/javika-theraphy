@@ -65,7 +65,7 @@ const CareerPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div className="min-h-screen bg-gray-50 font-sans overflow-hidden">
       {/* Hero Section */}
       <section className="bg-blue-900 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
