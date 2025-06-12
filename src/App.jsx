@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import AssessmentPage from "./pages/AssessmentPage";
 import CareersPage from "./pages/CareersPage";
+import TherapyPage from "./components/TherapyPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/assessment" element={<AssessmentPage />} />
             <Route path="/career" element={<CareersPage />} />
+            <Route path="/therapy/:type/:section" element={<TherapyPage />} />
           </Routes>
         </main>
         <Footer />

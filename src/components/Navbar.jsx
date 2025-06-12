@@ -9,6 +9,7 @@ export default function Navbar() {
   const currentPath = location.pathname;
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isBookOpen, setBookOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -19,8 +20,25 @@ export default function Navbar() {
     { label: "Contact", path: "/contact" },
   ];
 
+  const therapyCategories = [
+    "Autism Therapy",
+    "Occupational",
+    "Speech Therapy",
+    "Psychological",
+    "Special Ed",
+    "Behavioral",
+  ];
+
+  const dropdownLinks = ["what", "assessment", "procedure", "services"];
+
+  const toggleDropdown = (category) => {
+    setOpenDropdown(openDropdown === category ? null : category);
+  };
+
+  const formatPath = (text) => text.toLowerCase().replace(/\s+/g, "-");
+
   return (
-    <header className="w-full shadow-md bg-white border-b-2 relative">
+    <header className="w-full shadow-md bg-white border-b-2 relative z-50">
       <div className="flex justify-around max-md:justify-between items-center px-4 md:px-8 py-3">
         <Link to="/">
           <img
@@ -96,6 +114,47 @@ export default function Navbar() {
           </button>
         </div>
       )}
+
+      {/* Dropdown Menus (click-based, responsive) */}
+      <div className="w-full bg-gray-100 py-2 px-4 border-t text-purple-800 text-sm font-semibold flex flex-wrap justify-center lg:justify-evenly items-center">
+        {therapyCategories.map((category, index) => {
+          const slug = formatPath(category);
+          return (
+            <div key={index} className="relative text-center my-2">
+              <button
+                onClick={() => toggleDropdown(slug)}
+                className="flex items-center gap-1 uppercase px-3 py-1 hover:text-purple-600"
+              >
+                {category}
+                <span className="text-purple-500">❯</span>
+              </button>
+
+              {openDropdown === slug && (
+                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2">
+                  {dropdownLinks.map((page, i) => {
+                    const isDirectPage =
+                      page === "assessment" || page === "services";
+                    const path = isDirectPage
+                      ? `/${page}`
+                      : `/therapy/${slug}/${page}`;
+
+                    return (
+                      <Link
+                        key={i}
+                        to={path}
+                        onClick={() => setOpenDropdown(null)}
+                        className="text-purple-800 hover:text-purple-600 text-sm"
+                      >
+                        {page.replace(/-/g, " ").toUpperCase()}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
 
       {/* Book Appointment Modal */}
       {isBookOpen && <BookAppointment onClose={() => setBookOpen(false)} />}
