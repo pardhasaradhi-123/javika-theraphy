@@ -16,6 +16,13 @@ const descriptions = {
       "Therapists then create a structured intervention plan, typically involving Applied Behavior Analysis (ABA), play therapy, and social skills training. Sessions are held regularly, with progress monitored and goals adjusted as needed.",
       "Family training sessions are also part of the procedure, equipping parents with tools to support the child’s growth beyond the therapy center.",
     ],
+    assessment: [
+      "Comprehensive interdisciplinary evaluation lasting 1–4 hours, including caregiver interviews and both formal and informal assessment tasks.",
+      "Starts with background documentation and structured activities covering communication, behavior, and developmental domains.",
+      "Parents receive a detailed report of findings within a few days post-assessment.",
+      "Family involvement is central, ensuring alignment of goals and strategies across home, therapy, and school.",
+      "Assessment outcomes guide personalized, relationship-based 1:1 therapy session scheduling and planning.",
+    ],
   },
   "occupational-therapy": {
     url: "https://plus.unsplash.com/premium_photo-1661675788810-98afdba77747?auto=format&fit=crop&w=600&q=60",
