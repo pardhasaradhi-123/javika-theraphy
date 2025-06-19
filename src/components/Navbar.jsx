@@ -24,7 +24,7 @@ export default function Navbar() {
     "Autism Therapy",
     "Occupational Therapy",
     "Speech Therapy",
-    "Psychological",
+    "Psychological Counselling",
     "Parent and Caregiver Training",
     "Social Skills Training",
   ];
