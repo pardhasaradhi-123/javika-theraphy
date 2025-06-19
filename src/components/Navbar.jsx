@@ -10,6 +10,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isBookOpen, setBookOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown
+  const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -119,17 +120,29 @@ export default function Navbar() {
       <div className="w-full bg-gray-100 py-2 px-4 border-t text-purple-800 text-sm font-semibold flex flex-wrap justify-center lg:justify-evenly items-center">
         {therapyCategories.map((category, index) => {
           const slug = formatPath(category);
+          const isOpen = openDropdown === slug;
+
           return (
-            <div key={index} className="relative text-center my-2">
-              <button
-                onClick={() => toggleDropdown(slug)}
-                className="flex items-center gap-1 uppercase px-3 py-1 hover:text-purple-600"
-              >
+            <div
+              key={index}
+              className="relative text-center my-2"
+              onMouseEnter={() => {
+                clearTimeout(hoverTimeout);
+                setOpenDropdown(slug);
+              }}
+              onMouseLeave={() => {
+                const timeout = setTimeout(() => {
+                  setOpenDropdown(null);
+                }, 300); // delay in milliseconds
+                setHoverTimeout(timeout);
+              }}
+            >
+              <button className="flex items-center gap-1 uppercase px-3 py-1 hover:text-purple-600">
                 {category}
                 <span className="text-purple-500">❯</span>
               </button>
 
-              {openDropdown === slug && (
+              {isOpen && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2">
                   {dropdownLinks.map((page, i) => {
                     const isDirectPage = page === "services";
