@@ -17,7 +17,7 @@ const descriptions = {
       "Family training sessions are also part of the procedure, equipping parents with tools to support the child’s growth beyond the therapy center.",
     ],
   },
-  occupational: {
+  "occupational-therapy": {
     url: "https://plus.unsplash.com/premium_photo-1661675788810-98afdba77747?auto=format&fit=crop&w=600&q=60",
     what: [
       "Occupational Therapy assists individuals in achieving independence in daily activities through improved motor skills, coordination, and sensory integration.",
@@ -28,6 +28,12 @@ const descriptions = {
       "A thorough assessment is conducted to understand the client’s strengths and challenges in performing everyday tasks.",
       "Based on the assessment, a personalized therapy plan is created focusing on targeted exercises and adaptive techniques.",
       "Regular sessions with continuous progress tracking help individuals gain confidence and independence in daily routines.",
+    ],
+    assessment: [
+      "Occupational therapists assess individuals with autism across key areas: social skills, communication, sensory processing, motor function, and cognitive ability.",
+      "Standard tools used include the Childhood Autism Rating Scale (CARS), sensory profiles, and DSM-5-TR diagnostic criteria to identify specific challenges.",
+      "Therapists collaborate with families to set personalized, measurable goals which shape a tailored therapy plan.",
+      "The assessment outcomes guide the intervention strategy, focusing on skill development, sensory integration, and behavior regulation to promote independence and daily functioning.",
     ],
   },
   "speech-therapy": {
@@ -42,6 +48,13 @@ const descriptions = {
       "Therapists design custom exercises, such as tongue movement drills, vocabulary games, and sentence-building activities.",
       "Therapy sessions are often fun, engaging, and tailored to the individual’s pace and learning style.",
     ],
+    assessment: [
+      "Evaluations cover social communication (reciprocity, gestures, eye contact), relationship skills, and repetitive language patterns typical of ASD.",
+      "Play-based assessment explores development of joint attention, pretend play, and progression from solitary to cooperative interaction.",
+      "Tools like the Children’s Communication Checklist-2 (ages 4–16) and CELF‑5 Pragmatics Profile (ages 5–21) assess conversational rituals, relevance, nonverbal cues, and social language.",
+      "SLPs note behavioral observations regarding gaze, redundancy, pragmatic relevance, and atypical nonverbal/verbal communication.",
+      "Tasks may include inference, theory-of-mind scenarios, and understanding implied meaning to evaluate pragmatic and higher-level language abilities.",
+    ],
   },
   psychological: {
     url: "https://plus.unsplash.com/premium_photo-1664910881558-45d8a08b78b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8UHN5Y2hvbG9naWNhbCUyMENvdW5zZWxpbmclMjB3aXRoJTIwY2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
@@ -55,8 +68,15 @@ const descriptions = {
       "Therapists use techniques such as CBT, mindfulness, and psychoeducation to address underlying emotional challenges.",
       "Clients engage in regular therapy sessions and receive tools to implement in daily life for sustainable change.",
     ],
+    assessment: [
+      "Includes a records review and parent interview to understand developmental, medical, and behavioral history.",
+      "Child undergoes a 2–3 hour assessment using standardized tests and observations across cognitive, adaptive, and ASD-specific domains.",
+      "Parents receive a feedback session with results, diagnosis, recommendations, and later a detailed written report.",
+      "Tools include IQ/developmental scales, adaptive behavior questionnaires, and autism-specific measures assessing social, communication, and behavioral patterns.",
+      "Evaluation informs an accurate ASD diagnosis and guides personalized psychological, educational, and developmental intervention plans.",
+    ],
   },
-  "special-ed": {
+  "parent-and-caregiver-training": {
     url: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=60",
     what: [
       "Special Education Therapy is designed to support children with learning disabilities and developmental delays through individualized teaching methods.",
@@ -68,8 +88,14 @@ const descriptions = {
       "Therapy sessions are structured around targeted goals, such as improving reading comprehension or problem-solving skills.",
       "Progress is monitored continuously with adjustments made to accommodate the child’s evolving needs.",
     ],
+    assessment: [
+      "Parents are connected with community and school-based support—including workshops and guidance on crafting and understanding IEPs and 504 plans.",
+      "A multidisciplinary team helps design or review the child’s IEP, ensuring individual learning needs are accurately reflected.",
+      "Support services include educational workshops and transition-related events aimed at improving academic outcomes.",
+      "Sibling and family support are also provided to address the emotional and relational aspects of special education journeys.",
+    ],
   },
-  behavioral: {
+  "social-skills-training": {
     url: "https://plus.unsplash.com/premium_photo-1663089662335-f04d55ce328b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJlaGF2aW9yJTIwTWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
     what: [
       "Behavioral Therapy addresses disruptive behaviors and encourages positive behavior patterns using reinforcement techniques.",
@@ -80,6 +106,12 @@ const descriptions = {
       "Behavior analysis is conducted to identify triggers and consequences of problem behaviors.",
       "Therapists apply positive reinforcement, token systems, and behavioral contracts to encourage desired behaviors.",
       "Progress is recorded and shared with caregivers to maintain consistency across environments.",
+    ],
+    assessment: [
+      "A **functional behavior assessment (FBA)** gathers data on antecedents, behaviors, and consequences to determine the function of problem behaviors—such as seeking attention, avoiding tasks, or gaining sensory input :contentReference[oaicite:1]{index=1}.",
+      "Information is collected via direct observation, indirect interviews, and standardized tools to develop hypotheses about behavior triggers and reinforcers :contentReference[oaicite:2]{index=2}.",
+      "Assessment methods include descriptive behavior assessments and experimental functional analyses to confirm behavioral functions :contentReference[oaicite:3]{index=3}.",
+      "The FBA results inform individualized interventions, such as adjusting antecedents, reinforcing alternative behaviors, or teaching replacement skills using evidence-based ABA techniques :contentReference[oaicite:4]{index=4}.",
     ],
   },
 };

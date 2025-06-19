@@ -15,18 +15,18 @@ export default function Navbar() {
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Services", path: "/services" },
-    { label: "Assessment", path: "/assessment" },
+    // { label: "Assessment", path: "/assessment" },
     { label: "Career", path: "/career" },
     { label: "Contact", path: "/contact" },
   ];
 
   const therapyCategories = [
     "Autism Therapy",
-    "Occupational",
+    "Occupational Therapy",
     "Speech Therapy",
     "Psychological",
-    "Special Ed",
-    "Behavioral",
+    "Parent and Caregiver Training",
+    "Social Skills Training",
   ];
 
   const dropdownLinks = ["what", "assessment", "procedure", "services"];
@@ -132,8 +132,7 @@ export default function Navbar() {
               {openDropdown === slug && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2">
                   {dropdownLinks.map((page, i) => {
-                    const isDirectPage =
-                      page === "assessment" || page === "services";
+                    const isDirectPage = page === "services";
                     const path = isDirectPage
                       ? `/${page}`
                       : `/therapy/${slug}/${page}`;
