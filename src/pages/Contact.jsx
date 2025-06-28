@@ -64,7 +64,7 @@ const ContactForm = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-blue-800 text-white py-20 px-6 text-center">
+      <div className="bg-blue-800 text-white py-7 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Get in Touch With Us
         </h1>
