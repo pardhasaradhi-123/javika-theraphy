@@ -65,7 +65,7 @@ const ContactForm = () => {
     <>
       {/* Hero Section */}
       <div className="bg-blue-800 text-white py-7 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           Get in Touch With Us
         </h1>
         <p className="text-lg md:text-xl">
