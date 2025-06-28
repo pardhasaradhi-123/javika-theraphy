@@ -9,7 +9,9 @@ const ContactForm = () => {
     fullName: "",
     email: "",
     phone: "",
+    childAge: "",
     message: "",
+    bestTime: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -38,7 +40,9 @@ const ContactForm = () => {
         fullName: "",
         email: "",
         phone: "",
+        childAge: "",
         message: "",
+        bestTime: "",
       });
     } catch (error) {
       console.error("Submission Error:", error);
@@ -48,7 +52,6 @@ const ContactForm = () => {
     }
   };
 
-  // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
@@ -117,6 +120,12 @@ const ContactForm = () => {
                 type: "tel",
                 placeholder: "Your phone number",
               },
+              {
+                label: "Child Age",
+                name: "childAge",
+                type: "text",
+                placeholder: "e.g., 6 years",
+              },
             ].map(({ label, name, type, placeholder }, index) => (
               <motion.div
                 key={name}
@@ -142,15 +151,16 @@ const ContactForm = () => {
               </motion.div>
             ))}
 
+            {/* Message */}
             <motion.div
               className="flex flex-col gap-1"
-              custom={3}
+              custom={4}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
             >
               <label htmlFor="message" className="font-medium text-gray-700">
-                Message
+                I want to contact you about
               </label>
               <textarea
                 id="message"
@@ -158,15 +168,39 @@ const ContactForm = () => {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Write your message here..."
+                placeholder="Write your reason here"
                 required
                 className="border border-gray-300 bg-gray-200 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </motion.div>
 
+            {/* Best time to reach */}
+            <motion.div
+              className="flex flex-col gap-1"
+              custom={5}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <label htmlFor="bestTime" className="font-medium text-gray-700">
+                Best time to reach you
+              </label>
+              <input
+                id="bestTime"
+                name="bestTime"
+                type="text"
+                value={formData.bestTime}
+                onChange={handleChange}
+                placeholder="e.g., Between 2PM - 4PM"
+                required
+                className="border border-gray-300 bg-gray-200 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </motion.div>
+
+            {/* Submit Button */}
             <motion.div
               className="text-center"
-              custom={4}
+              custom={6}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}

@@ -12,7 +12,7 @@ const About = () => {
     <section className="bg-white text-gray-800 pb-10 overflow-hidden">
       {/* Hero */}
       <div
-        className="text-center mb-16 py-20 px-6 rounded-lg"
+        className="text-center mb-16 py-7 px-6"
         style={{
           background: "linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%)",
         }}

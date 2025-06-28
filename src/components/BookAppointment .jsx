@@ -6,7 +6,9 @@ const BookAppointment = ({ onClose }) => {
     email: "",
     phone: "",
     date: "",
-    message: "", // added message field
+    childAge: "",
+    message: "",
+    bestTime: "",
   });
 
   const handleChange = (e) => {
@@ -66,6 +68,7 @@ const BookAppointment = ({ onClose }) => {
               <input
                 type="text"
                 name="name"
+                placeholder="Full name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -77,6 +80,7 @@ const BookAppointment = ({ onClose }) => {
               <input
                 type="email"
                 name="email"
+                placeholder="example@gmail.com"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -90,6 +94,7 @@ const BookAppointment = ({ onClose }) => {
               <input
                 type="tel"
                 name="phone"
+                placeholder="mobile number"
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -109,21 +114,53 @@ const BookAppointment = ({ onClose }) => {
                 className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200"
               />
             </div>
-            {/* New message input spanning full width */}
+
+            {/* Child Age */}
             <div className="sm:col-span-2">
               <label className="block mb-1 text-sm font-medium">
-                Message (optional)
+                Child Age
+              </label>
+              <input
+                type="text"
+                name="childAge"
+                value={formData.childAge}
+                onChange={handleChange}
+                placeholder="e.g., 5 years"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="sm:col-span-2">
+              <label className="block mb-1 text-sm font-medium">
+                I want to contact you about
               </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={4}
+                rows={3}
+                placeholder="Reason for appointment"
                 className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200 resize-none"
-                placeholder="Any additional information or requests..."
+              />
+            </div>
+
+            {/* Best Time to Reach */}
+            <div className="sm:col-span-2">
+              <label className="block mb-1 text-sm font-medium">
+                Best time to reach you
+              </label>
+              <input
+                type="text"
+                name="bestTime"
+                value={formData.bestTime}
+                onChange={handleChange}
+                placeholder="e.g., Between 2PM - 4PM"
+                className="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-200"
               />
             </div>
           </div>
+
           <button
             type="submit"
             className="w-full bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800 transition duration-200 mt-4"

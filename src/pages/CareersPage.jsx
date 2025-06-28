@@ -67,13 +67,16 @@ const CareerPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans overflow-hidden">
       {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-semibold mb-4">
+      <section className="bg-blue-900 text-white py-7 px-6 text-center">
+        <h1 className="text-3xl md:text-4xl font-semibold mb-4">
           Careers at Javika Therapy
         </h1>
-        <p className="max-w-2xl mx-auto text-lg md:text-xl">
-          Join our team of dedicated therapists and staff committed to enriching
-          the lives of children and families.
+        <p className="max-w-2xl mx-auto mb-8 text-center">
+          We at Javika Therapy is hiring Fresher’s & teachers with 1-2 years of
+          experienc for the position of Shadow Teachers/Therapist Interested
+          applicants can Email us at{" "}
+          <span className="underline">javikatherapy@gmail.com </span>
+          with your updated resume.
         </p>
       </section>
 

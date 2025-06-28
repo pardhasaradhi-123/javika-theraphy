@@ -1,4 +1,10 @@
-import { FaCalendarCheck, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaCalendarCheck,
+  FaBars,
+  FaTimes,
+  FaInstagram,
+  FaFacebookF,
+} from "react-icons/fa";
 import logo from "../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -22,7 +28,7 @@ export default function Navbar() {
   ];
 
   const therapyCategories = [
-    "Autism Therapy",
+    "ABA Therapy",
     "Occupational Therapy",
     "Speech Therapy",
     "Psychological Counselling",
@@ -85,6 +91,25 @@ export default function Navbar() {
             Book Appointment
           </button>
         </div>
+
+        <div className="hidden lg:flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/share/1DZZgB1Jk2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-700 hover:text-blue-900 text-lg"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://www.instagram.com/javikatherapy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-600 hover:text-pink-800 text-lg"
+          >
+            <FaInstagram />
+          </a>
+        </div>
       </div>
 
       {/* Mobile menu content */}
@@ -145,9 +170,9 @@ export default function Navbar() {
               {isOpen && (
                 <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2">
                   {dropdownLinks.map((page, i) => {
-                    const isDirectPage = page === "services";
-                    const path = isDirectPage
-                      ? `/${page}`
+                    const isServicesScroll = page === "services";
+                    const path = isServicesScroll
+                      ? `/services#${slug}`
                       : `/therapy/${slug}/${page}`;
 
                     return (

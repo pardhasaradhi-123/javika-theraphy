@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useLocation } from "react-router-dom";
 
 const servicesData = [
   {
@@ -12,17 +13,6 @@ const servicesData = [
       "Applied Behavior Analysis (ABA) therapy is an evidence-based approach used to improve social, communication, and learning skills. It focuses on breaking down tasks into small, manageable steps and using positive reinforcement to encourage progress. This method is widely recognized as the most effective treatment for children with autism spectrum disorder.",
       "Our ABA programs are individualized for each child’s needs and goals, using data-driven techniques to measure improvement and adjust strategies accordingly. Whether it's improving verbal skills, social interaction, or reducing problematic behaviors, ABA provides a structured and supportive environment for growth.",
       "At Javika Therapy, our licensed behavior therapists work closely with families and caregivers to ensure consistency and support both in clinical sessions and at home.",
-    ],
-  },
-  {
-    title: "ABA Assessment for Autism",
-    icon: "📋",
-    image:
-      "https://plus.unsplash.com/premium_photo-1711555629283-366ea41f6772?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QUJBJTIwQXNzZXNzbWVudCUyMGZvciUyMEF1dGlzbXxlbnwwfHwwfHx8MA%3D%3D",
-    paragraphs: [
-      "ABA assessments form the foundation of our therapeutic planning. These in-depth evaluations analyze a child's behavior, learning style, strengths, and areas of need to create a targeted treatment plan.",
-      "By understanding how a child learns and responds to different situations, we can craft an effective ABA plan that evolves with their development.",
-      "Every child is unique, and our assessments reflect that. The process is collaborative, involving caregivers at every step.",
     ],
   },
   {
@@ -48,125 +38,117 @@ const servicesData = [
     ],
   },
   {
-    title: "Special Education",
-    icon: "📚",
-    image:
-      "https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=60",
-    paragraphs: [
-      "Special education provides a customized learning experience for children with diverse needs. It ensures that every child receives equitable access to education tailored to their learning style and developmental level.",
-      "We collaborate with families, therapists, and schools to create Individualized Education Plans (IEPs) that reflect each child's unique strengths and goals.",
-      "Our special education team fosters a nurturing and inclusive environment where children can thrive academically while building emotional resilience and social skills.",
-    ],
-  },
-  {
-    title: "Parent Training",
-    icon: "👨‍👩‍👧",
-    image:
-      "https://images.unsplash.com/photo-1714646793441-38c8f94141f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFyZW50JTIwdHJhaW5pbmclMjAoRXF1aXBzJTIwcGFyZW50cyUyMHdpdGglMjBzdHJhdGVnaWVzJTIwYW5kJTIwdG9vbHMlMjB0byUyMHN1cHBvcnQlMjB0aGVpciUyMGNoaWxkJ3MlMjBkZXZlbG9wbWVudCUyMGF0JTIwaG9tZSUyMGFuZCUyMGluJTIwc29jaWFsJTIwc2V0dGluZ3MuKXxlbnwwfHwwfHx8MA%3D%3D",
-    paragraphs: [
-      "Parent training is a cornerstone of our approach at Javika Therapy. We equip parents with effective strategies to support their child's learning and behavior at home.",
-      "Our sessions cover behavior management, communication support, daily routine structuring, and social skill development.",
-      "When parents are actively involved in the therapeutic process, children show greater progress and consistency.",
-    ],
-  },
-  {
-    title: "Early Intervention",
-    icon: "👶",
-    image:
-      "https://plus.unsplash.com/premium_photo-1664910437130-f91cac49b4bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RWFybHklMjBJbnRlcnZlbnRpb24lMjAoRm9jdXNlZCUyMHByb2dyYW1zJTIwZm9yJTIweW91bmclMjBjaGlsZHJlbiUyMHNob3dpbmclMjBlYXJseSUyMHNpZ25zJTIwb2YlMjBkZXZlbG9wbWVudGFsJTIwZGVsYXlzJTIwdG8lMjBoZWxwJTIwdGhlbSUyMHJlYWNoJTIwYWdlJTIwYXBwcm9wcmlhdGUlMjBtaWxlc3RvbmVzLil8ZW58MHx8MHx8fDA%3D",
-    paragraphs: [
-      "Early intervention is crucial for children showing signs of developmental delays. The earlier we identify and support a child’s needs, the greater the opportunity for growth and independence.",
-      "We focus on language, motor, cognitive, and social-emotional development through structured play and interaction.",
-      "With a nurturing environment and expert guidance, children in our early intervention program develop foundational skills that set the stage for lifelong learning.",
-    ],
-  },
-  {
-    title: "Autism Therapy",
-    icon: "🧩",
-    image:
-      "https://plus.unsplash.com/premium_photo-1723716015078-1d8615d84633?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QXV0aXNtJTIwVGhlcmFweXxlbnwwfHwwfHx8MA%3D%3D",
-    paragraphs: [
-      "Autism Therapy at Javika is tailored to address the unique challenges and strengths of individuals with autism spectrum disorder. It includes a mix of ABA, sensory integration, and communication strategies.",
-      "Our multidisciplinary team collaborates to create structured, goal-driven sessions that foster social, emotional, and behavioral development.",
-      "We aim to enhance independence, improve interaction skills, and empower both the individual and their family for long-term success.",
-    ],
-  },
-  {
-    title: "Behavioral Therapy",
-    icon: "🧭",
-    image:
-      "https://plus.unsplash.com/premium_photo-1663089662335-f04d55ce328b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJlaGF2aW9yJTIwTWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D",
-    paragraphs: [
-      "Behavioral Therapy helps children understand and change challenging behaviors through structured techniques such as reinforcement, modeling, and behavior modification plans.",
-      "Our therapists work closely with families to identify triggers, set goals, and implement strategies that encourage positive behavior.",
-      "We focus on developing self-control, coping mechanisms, and adaptive skills that promote success at home, school, and in social settings.",
-    ],
-  },
-  {
-    title: "Psychological Counseling",
+    title: "Psychological Counselling",
     icon: "🧘",
     image:
       "https://plus.unsplash.com/premium_photo-1664910881558-45d8a08b78b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8UHN5Y2hvbG9naWNhbCUyMENvdW5zZWxpbmclMjB3aXRoJTIwY2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
     paragraphs: [
-      "Psychological counseling offers a safe space for children and adolescents to explore their emotions, thoughts, and experiences.",
-      "Our licensed psychologists address issues such as anxiety, depression, trauma, and emotional regulation through age-appropriate talk therapy and creative methods like art or play therapy.",
-      "With empathy and expertise, we support mental well-being, self-awareness, and emotional resilience for every child.",
+      "Psychological counselling offers children a safe, confidential space to explore their thoughts, emotions, and behaviors with the guidance of a qualified therapist.",
+      "Our counseling sessions are tailored to support emotional regulation, resilience, and coping strategies, especially for children dealing with anxiety, trauma, or behavioral challenges.",
+      "At Javika Therapy, our licensed psychologists use age-appropriate techniques such as talk therapy, art therapy, and play therapy to help children thrive mentally and emotionally.",
+    ],
+  },
+  {
+    title: "Parent and Caregiver Training",
+    icon: "👨‍👩‍👧",
+    image:
+      "https://images.unsplash.com/photo-1714646793441-38c8f94141f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFyZW50JTIwdHJhaW5pbmclMjAoRXF1aXBzJTIwcGFyZW50cyUyMHdpdGglMjBzdHJhdGVnaWVzJTIwYW5kJTIwdG9vbHMlMjB0byUyMHN1cHBvcnQlMjB0aGVpciUyMGNoaWxkJ3MlMjBkZXZlbG9wbWVudCUyMGF0JTIwaG9tZSUyMGFuZCUyMGluJTIwc29jaWFsJTIwc2V0dGluZ3MuKXxlbnwwfHwwfHx8MA%3D%3D",
+    paragraphs: [
+      "Our Parent and Caregiver Training sessions empower families with the knowledge and tools they need to support their child’s developmental journey at home.",
+      "We offer practical strategies on communication, behavior management, and daily routines to ensure consistency between therapy and home environments.",
+      "At Javika Therapy, we believe parents are key partners in a child’s progress — and we’re here to guide and support them every step of the way.",
+    ],
+  },
+  {
+    title: "Social Skills Training",
+    icon: "🤝",
+    image:
+      "https://plus.unsplash.com/premium_photo-1750767153031-2b9d8af33478?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8U29jaWFsJTIwU2tpbGxzJTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D",
+    paragraphs: [
+      "Social Skills Training helps children build meaningful connections by improving communication, cooperation, and emotional understanding.",
+      "Through structured group sessions, role-playing, and interactive games, children learn how to express themselves, read social cues, and navigate peer interactions.",
+      "At Javika Therapy, our therapists create a safe, encouraging space where children can practice and develop these essential skills for everyday life.",
     ],
   },
 ];
 
-// TherapyOptions component
-const TherapyOptions = ({ therapies, therapyIcons }) => {
-  const handleClick = (title) => {
-    // Scroll smoothly to the section with the corresponding ID
-    const element = document.getElementById(
-      title.toLowerCase().replace(/\s+/g, "-")
-    );
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  return (
-    <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {therapies.map((therapy, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center group cursor-pointer border rounded-lg p-4 border-transparent hover:border-pink-600 hover:bg-pink-50"
-              onClick={() => handleClick(therapy)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") handleClick(therapy);
-              }}
-            >
-              <div className="text-4xl mb-2 text-pink-600 group-hover:scale-110 transition-transform">
-                {therapyIcons[therapy]}
-              </div>
-              <span className="text-center text-md text-purple-700 capitalize group-hover:underline">
-                {therapy}
-              </span>
-              <span className="text-purple-700 text-xl mt-1">&gt;</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 const Services = () => {
+  const location = useLocation();
+  const [selectedService, setSelectedService] = useState(null);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const therapies = servicesData.map((s) => s.title);
-  const therapyIcons = servicesData.reduce((acc, s) => {
-    acc[s.title] = s.icon;
-    return acc;
-  }, {});
+  useEffect(() => {
+    if (location.hash) {
+      const slug = location.hash.replace("#", "");
+      const found = servicesData.find(
+        (s) => s.title.toLowerCase().replace(/\s+/g, "-") === slug
+      );
+
+      if (found) {
+        setSelectedService(found);
+
+        // Scroll with offset (for navbar height)
+        setTimeout(() => {
+          const section = document.getElementById(slug);
+          if (section) {
+            const offset = 100;
+            const y =
+              section.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+          }
+        }, 300);
+      } else {
+        setSelectedService(null);
+      }
+    } else {
+      setSelectedService(null); // show all if no hash
+    }
+  }, [location]);
+
+  const renderServiceSection = (service, index) => {
+    const isEven = index % 2 === 0;
+    return (
+      <section
+        key={service.title}
+        id={service.title.toLowerCase().replace(/\s+/g, "-")}
+        className={`flex flex-col md:flex-row items-center ${
+          !isEven ? "md:flex-row-reverse" : ""
+        } gap-8`}
+        data-aos={isEven ? "fade-right" : "fade-left"}
+      >
+        <div className="relative w-full md:w-1/2 max-w-sm h-64">
+          <div className="absolute w-80 h-80 rounded-full bg-blue-200 blur-2xl animate-pulse z-0 top-0 left-1/2 -translate-x-1/2"></div>
+          <div className="absolute w-72 h-72 rounded-full bg-blue-400 opacity-90 blur-3xl animate-pulse z-0 top-6 left-1/2 -translate-x-1/2"></div>
+
+          <img
+            src={service.image}
+            alt={service.title}
+            className="relative w-64 h-64 object-cover rounded-full shadow-lg z-10 mx-auto"
+          />
+        </div>
+
+        <div className="w-full md:w-1/2">
+          <div className="text-4xl mb-2">{service.icon}</div>
+          <h3 className="text-2xl font-semibold text-blue-700 mb-4">
+            {service.title}
+          </h3>
+          {service.paragraphs.map((para, i) => (
+            <p
+              key={i}
+              className="text-gray-600 mb-4"
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
+      </section>
+    );
+  };
 
   return (
     <section className="mx-auto bg-gray-50 overflow-hidden pb-20">
@@ -181,51 +163,12 @@ const Services = () => {
         </p>
       </div>
 
-      {/* TherapyOptions above Services */}
-      <TherapyOptions therapies={therapies} therapyIcons={therapyIcons} />
-
       <div className="space-y-20 max-md:px-5">
-        {servicesData.map((service, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <section
-              key={service.title}
-              id={service.title.toLowerCase().replace(/\s+/g, "-")}
-              className={`flex flex-col md:flex-row items-center ${
-                !isEven ? "md:flex-row-reverse" : ""
-              } gap-8`}
-              data-aos={isEven ? "fade-right" : "fade-left"}
-            >
-              <div className="relative w-full md:w-1/2 max-w-sm h-64">
-                <div className="absolute w-80 h-80 rounded-full bg-blue-200 blur-2xl animate-pulse z-0 top-0 left-1/2 -translate-x-1/2"></div>
-                <div className="absolute w-72 h-72 rounded-full bg-blue-400 opacity-90 blur-3xl animate-pulse z-0 top-6 left-1/2 -translate-x-1/2"></div>
-
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="relative w-64 h-64 object-cover rounded-full shadow-lg z-10 mx-auto"
-                />
-              </div>
-
-              <div className="w-full md:w-1/2">
-                <div className="text-4xl mb-2">{service.icon}</div>
-                <h3 className="text-2xl font-semibold text-blue-700 mb-4">
-                  {service.title}
-                </h3>
-                {service.paragraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-gray-600 mb-4"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 150}
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </section>
-          );
-        })}
+        {selectedService
+          ? renderServiceSection(selectedService, 0)
+          : servicesData.map((service, index) =>
+              renderServiceSection(service, index)
+            )}
       </div>
     </section>
   );
