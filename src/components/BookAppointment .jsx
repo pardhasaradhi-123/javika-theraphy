@@ -59,7 +59,7 @@ const BookAppointment = ({ onClose }) => {
         <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-blue-700 text-center">
           Book Appointment
         </h2>
-        <form onSubmit={handlePayment} className="space-y-4">
+        <form className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block mb-1 text-sm font-medium">
@@ -163,9 +163,12 @@ const BookAppointment = ({ onClose }) => {
 
           <button
             type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
             className="w-full bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800 transition duration-200 mt-4"
           >
-            Pay ₹500 & Book Now
+            Thank You
           </button>
         </form>
       </div>
