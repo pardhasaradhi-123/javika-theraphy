@@ -158,7 +158,7 @@ export default function Navbar() {
               onMouseLeave={() => {
                 const timeout = setTimeout(() => {
                   setOpenDropdown(null);
-                }, 300); // delay in milliseconds
+                }, 300);
                 setHoverTimeout(timeout);
               }}
             >
@@ -168,7 +168,17 @@ export default function Navbar() {
               </button>
 
               {isOpen && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2">
+                <div
+                  className={`absolute mt-2 bg-white shadow-md border rounded-md z-50 p-4 w-64 sm:w-96 grid grid-cols-2 gap-2
+        ${
+          index === 0
+            ? "left-0"
+            : index === therapyCategories.length - 1
+            ? "right-0"
+            : "left-1/2 transform -translate-x-1/2"
+        }
+      `}
+                >
                   {dropdownLinks.map((page, i) => {
                     const isServicesScroll = page === "services";
                     const path = isServicesScroll
