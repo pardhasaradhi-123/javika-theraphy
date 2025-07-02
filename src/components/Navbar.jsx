@@ -46,12 +46,12 @@ export default function Navbar() {
 
   return (
     <header className="w-full shadow-md bg-white border-b-2 relative z-50">
-      <div className="flex justify-around max-md:justify-between items-center px-4 md:px-8 py-3">
+      <div className="flex justify-around max-md:justify-between items-center px-4 md:px-8 py-2">
         <Link to="/">
           <img
             src={logo}
             alt="Javika Therapy Logo"
-            className="h-16 w-full sm:h-24 md:h-32"
+            className="h-12 sm:h-16 md:h-20"
           />
         </Link>
 
@@ -65,7 +65,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop navigation */}
-        <nav className="hidden lg:flex gap-6 text-violet-800 font-medium text-sm md:text-base">
+        <nav className="hidden lg:flex gap-5 text-violet-800 font-medium text-sm">
           {navItems.map(({ label, path }) => (
             <Link
               key={label}
@@ -85,7 +85,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setBookOpen(true)}
-            className="flex items-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-800 transition"
+            className="flex items-center gap-2 bg-blue-700 text-white px-3 py-1.5 rounded-full text-sm font-medium hover:bg-blue-800 transition"
           >
             <FaCalendarCheck />
             Book Appointment

@@ -85,7 +85,7 @@ const descriptions = {
   "occupational-therapy": {
     what: {
       images: [
-        "https://plus.unsplash.com/premium_photo-1661675788810-98afdba77747?auto=format&fit=crop&w=600&q=60",
+        "https://ideogram.ai/assets/progressive-image/balanced/response/3Rx-I5ufTvmEkH6fpZKqjg",
       ],
       content: [
         "Occupational therapy is a field of healthcare that holistically treats people who have injuries, disabilities or other conditions, including autism. In this practice, Occupational Therapists (OTs) **help patients develop, recover or maintain their ability to engage in meaningful daily activities, including effective communication.**",
@@ -134,7 +134,7 @@ const descriptions = {
   "speech-therapy": {
     what: {
       images: [
-        "https://plus.unsplash.com/premium_photo-1661724564774-69a5c92a56da?auto=format&fit=crop&w=600&q=60",
+        "https://ideogram.ai/assets/progressive-image/balanced/response/vbV31DQrRYWAjPYHDILYIw",
       ],
       content: [
         "Speech therapy, also known as speech-language therapy, is a type of treatment that addresses communication and swallowing difficulties. It's provided by a speech-language pathologist (SLP) (also called a speech therapist) to help individuals improve their ability to speak clearly, understand and express language, and safely swallow. ",
@@ -224,7 +224,7 @@ const descriptions = {
   "psychological-counselling": {
     what: {
       images: [
-        "https://plus.unsplash.com/premium_photo-1664910881558-45d8a08b78b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8UHN5Y2hvbG9naWNhbCUyMENvdW5zZWxpbmclMjB3aXRoJTIwY2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
+        "https://ideogram.ai/assets/progressive-image/balanced/response/J7lI8kkCSkKsqCLXpVckAg",
       ],
       content: [
         "Psychological therapy for autism, also known as psychosocial interventions, aims to improve a person's social, emotional, and behavioral functioning. These therapies, often tailored to individual needs, help manage autism symptoms and co-occurring mental health conditions like anxiety or depression. Common approaches include cognitive behavioral therapy (CBT), play therapy, and applied behavior analysis (ABA). ",

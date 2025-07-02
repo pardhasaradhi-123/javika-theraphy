@@ -51,31 +51,45 @@ const About = () => {
       </div>
 
       {/* Our Mission */}
-      <div className="flex flex-col md:flex-row items-center gap-10 mb-20 px-16">
+      <div className="flex flex-col items-center gap-10 mb-20 px-4 md:px-16">
         <div
-          className="w-full md:w-1/2 order-2 md:order-1"
+          className="w-full md:w-4/5 p-8 md:p-10 rounded-xl shadow-md text-center"
           data-aos="fade-right"
         >
-          <h2 className="text-2xl font-semibold text-blue-700 mb-4">
-            Our Mission
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            At Javika Therapy, our mission is to provide holistic development
-            for children by combining expert therapeutic methods with a
-            nurturing environment. We empower not just children, but families —
-            helping them understand, support, and celebrate their child’s unique
-            progress.
+          <h2 className="text-3xl font-bold text-blue-700 mb-6">Our Mission</h2>
+          <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+            At Javika Therapy, our mission is to provide{" "}
+            <b>holistic development</b> for children by combining{" "}
+            <b>expert therapeutic methods</b> with a{" "}
+            <b>nurturing and inclusive environment</b>. We empower not just
+            children, but families — helping them understand, support, and
+            celebrate their child’s unique progress.
           </p>
-        </div>
-        <div
-          className="w-full md:w-1/2 order-1 md:order-2"
-          data-aos="fade-left"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=700&q=60"
-            alt="Mission-driven care"
-            className="rounded-xl shadow-lg"
-          />
+          <ul className="text-gray-700 flex flex-wrap justify-center gap-4 mt-4">
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              Offering <b>individualized therapy plans</b>
+            </li>
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              Encouraging <b>early intervention</b>
+            </li>
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              Fostering a <b>safe, accepted, and motivating</b> space
+            </li>
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              <b>Collaborating with families</b> and educators
+            </li>
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              Promoting <b>overall well-being</b>
+            </li>
+            <li className="bg-white px-4 py-2 rounded-full shadow text-sm md:text-base">
+              Creating <b>trust and compassion</b>
+            </li>
+          </ul>
+
+          <p className="text-gray-700 leading-relaxed mt-6 text-lg">
+            Together, we work toward building a brighter, more confident future
+            for every child who walks through our doors.
+          </p>
         </div>
       </div>
 

@@ -8,7 +8,7 @@ const benefits = [
     description:
       "Saves time and energy for parents as therapy is provided at home.",
     image:
-      "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=400&q=80",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/Sw_GW81zRjOdeRwNXhD8kg",
     animation: "fade-left",
   },
   {
@@ -16,7 +16,7 @@ const benefits = [
     description:
       "Child feels comfortable in their own safe space instead of unfamiliar centers.",
     image:
-      "https://plus.unsplash.com/premium_photo-1664304875148-4af0fe62f2ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpbGQlMjBmZWVscyUyMGNvbWZvcnRhYmxlJTIwaW4lMjB0aGVpciUyMG93biUyMHNhZmUlMjBzcGFjZSUyMGluc3RlYWQlMjBvZiUyMHVuZmFtaWxpYXIlMjBjZW50ZXJzLnxlbnwwfHwwfHx8MA%3D%3D",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/-9noSM_PTbu1TefTcHg1Lg",
     animation: "fade-right",
   },
   {
@@ -24,7 +24,7 @@ const benefits = [
     description:
       "Home activities, toys, and games motivate positive behavior through reinforcement.",
     image:
-      "https://images.unsplash.com/photo-1577897113292-3b95936e5206?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SG9tZSUyMGFjdGl2aXRpZXMlMkMlMjB0b3lzJTJDJTIwYW5kJTIwZ2FtZXMlMjBtb3RpdmF0ZSUyMHBvc2l0aXZlJTIwYmVoYXZpb3IlMjB0aHJvdWdoJTIwcmVpbmZvcmNlbWVudC58ZW58MHx8MHx8fDA%3D",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/faNGyEFBSVOIiOA2Yc2nsQ",
     animation: "fade-left",
   },
   {
@@ -32,7 +32,7 @@ const benefits = [
     description:
       "Family members can participate actively and track progress together.",
     image:
-      "https://plus.unsplash.com/premium_photo-1661677680531-e045f65191b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QmV0dGVyJTIwRmFtaWx5JTIwUmVsYXRpb25zaGlwcyhGYW1pbHklMjBtZW1iZXJzJTIwY2FuJTIwcGFydGljaXBhdGUlMjBhY3RpdmVseSUyMGFuZCUyMHRyYWNrJTIwcHJvZ3Jlc3MlMjB0b2dldGhlci4pfGVufDB8fDB8fHww",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/7pEeQ_jeTtatw5aCnHnz7g",
     animation: "fade-right",
   },
   {
@@ -40,7 +40,7 @@ const benefits = [
     description:
       "Skills learned at home easily transfer to other settings (e.g., using a toilet handle).",
     image:
-      "https://images.unsplash.com/photo-1714646792977-4aa8f6890aac?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8R2VuZXJhbGl6YXRpb24lMjAoU2tpbGxzJTIwbGVhcm5lZCUyMGF0JTIwaG9tZSUyMGVhc2lseSUyMHRyYW5zZmVyJTIwdG8lMjBvdGhlciUyMHNldHRpbmdzLil8ZW58MHx8MHx8fDA%3D",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/JejkzlhDQ_yY340e9Ul7bQ",
     animation: "fade-left",
   },
   {
@@ -48,7 +48,7 @@ const benefits = [
     description:
       "Easier to work on everyday behaviors like dressing, eating, bedtime routines.",
     image:
-      "https://plus.unsplash.com/premium_photo-1718201868174-b1844f729a79?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QWRkcmVzc2luZyUyMFNwZWNpZmljJTIwQmVoYXZpb3JzJTIwKEVhc2llciUyMHRvJTIwd29yayUyMG9uJTIwZXZlcnlkYXklMjBiZWhhdmlvcnMlMjBsaWtlJTIwZHJlc3NpbmclMkMlMjBlYXRpbmclMkMlMjBiZWR0aW1lJTIwcm91dGluZXMuKXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/I89n4e75S9ivR1Xf2pYlKQ",
     animation: "fade-right",
   },
   {
@@ -56,7 +56,7 @@ const benefits = [
     description:
       "No need to prepare for or travel to sessions, reducing anxiety.",
     image:
-      "https://plus.unsplash.com/premium_photo-1661637665927-b0bb7e25f5b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RWxpbWluYXRlJTIwVHJhbnNpdGlvbnMlMjAoTm8lMjBuZWVkJTIwdG8lMjBwcmVwYXJlJTIwZm9yJTIwb3IlMjB0cmF2ZWwlMjB0byUyMHNlc3Npb25zJTJDJTIwcmVkdWNpbmclMjBhbnhpZXR5Lil8ZW58MHx8MHx8fDA%3D",
+      "https://ideogram.ai/assets/progressive-image/balanced/response/8xRa4xJOTj-HsRkOmiOVcQ",
     animation: "fade-left",
   },
 ];

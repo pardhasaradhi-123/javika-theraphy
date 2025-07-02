@@ -4,10 +4,10 @@ import "aos/dist/aos.css";
 import BookAppointment from "../components/BookAppointment ";
 
 const heroBackgrounds = [
-  "https://leafwingcenter.org/wp-content/uploads/2021/03/aba-therapy-learner-2-1.jpeg",
-  "https://www.abacenters.com/wp-content/uploads/abaca-inhome1-1.jpg",
-  "https://www.achievebeyondusa.com/wp-content/uploads/2021/11/main-image-2-autism-services-1024x683.jpg",
-  "https://leafwingcenter.org/wp-content/uploads/2021/03/ABA-therapy-learner-1.jpeg",
+  "https://ideogram.ai/assets/progressive-image/balanced/response/Aw_27KUtRzKyLXRyMtRkLA",
+  "https://ideogram.ai/assets/progressive-image/balanced/response/1rCOSim4T12zXTYf2QUdvA",
+  "https://ideogram.ai/assets/progressive-image/balanced/response/R_EALkMZQ4iFJI0cuPoggg",
+  "https://ideogram.ai/assets/progressive-image/balanced/response/pesSAWl1TUa9ssmud80PEg",
 ];
 
 const Hero = () => {
