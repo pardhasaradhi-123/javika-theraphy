@@ -75,7 +75,7 @@ const CareerPage = () => {
           We at Javika Therapy is hiring Fresher’s & teachers with 1-2 years of
           experienc for the position of Shadow Teachers/Therapist Interested
           applicants can Email us at{" "}
-          <span className="underline">javikatherapy@gmail.com </span>
+          <span className="underline">therapyjavika@gmail.com </span>
           with your updated resume.
         </p>
       </section>
