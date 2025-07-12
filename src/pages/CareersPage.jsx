@@ -139,7 +139,7 @@ const CareerPage = () => {
         <p className="max-w-xl mx-auto mb-8 text-center text-gray-800">
           Please send your resume and a cover letter to{" "}
           <span className="text-blue-700 underline">
-            javikatherapy@gmail.com
+            therapyjavika@gmail.com
           </span>
           . We look forward to hearing from you!
         </p>

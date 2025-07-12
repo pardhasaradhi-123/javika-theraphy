@@ -50,7 +50,7 @@ const Footer = () => {
               <Phone size={16} /> +91 9876 543 210
             </li>
             <li className="flex items-center gap-2">
-              <Mail size={16} /> javikatherapy@gmail.com
+              <Mail size={16} /> therapyjavika@gmail.com
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={16} /> Chennai, India
