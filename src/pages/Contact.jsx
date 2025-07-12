@@ -99,7 +99,7 @@ const ContactForm = () => {
           {/* Right Form Section */}
           <form
             onSubmit={handleSubmit}
-            className="max-w-lg flex flex-col gap-6"
+            className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {[
               {
@@ -151,9 +151,9 @@ const ContactForm = () => {
               </motion.div>
             ))}
 
-            {/* Message */}
+            {/* Message - Full width */}
             <motion.div
-              className="flex flex-col gap-1"
+              className="md:col-span-2 flex flex-col gap-1"
               custom={4}
               initial="hidden"
               animate="visible"
@@ -174,9 +174,9 @@ const ContactForm = () => {
               ></textarea>
             </motion.div>
 
-            {/* Best time to reach */}
+            {/* Best Time - Full width */}
             <motion.div
-              className="flex flex-col gap-1"
+              className="md:col-span-2 flex flex-col gap-1"
               custom={5}
               initial="hidden"
               animate="visible"
@@ -197,9 +197,9 @@ const ContactForm = () => {
               />
             </motion.div>
 
-            {/* Submit Button */}
+            {/* Submit - Full width centered */}
             <motion.div
-              className="text-center"
+              className="md:col-span-2 text-center"
               custom={6}
               initial="hidden"
               animate="visible"
