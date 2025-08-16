@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 const servicesData = [
   {
     title: "ABA Therapy",
-    icon: "🧠",
     image:
       "https://media.istockphoto.com/id/1426218725/photo/flat-lay-composition-with-abbreviation-aba-and-colorful-numbers-on-white-wooden-table-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=MlmP7lwM8FIO45Hssa_mm3Z_TP7oQ5N-6YqnXqnA2nk=",
     paragraphs: [
@@ -17,7 +16,6 @@ const servicesData = [
   },
   {
     title: "Speech Therapy",
-    icon: "🗣️",
     image:
       "https://plus.unsplash.com/premium_photo-1661724564774-69a5c92a56da?auto=format&fit=crop&w=600&q=60",
     paragraphs: [
@@ -28,7 +26,6 @@ const servicesData = [
   },
   {
     title: "Occupational Therapy",
-    icon: "✋",
     image:
       "https://plus.unsplash.com/premium_photo-1661675788810-98afdba77747?auto=format&fit=crop&w=600&q=60",
     paragraphs: [
@@ -39,7 +36,6 @@ const servicesData = [
   },
   {
     title: "Psychological Counselling",
-    icon: "🧘",
     image:
       "https://plus.unsplash.com/premium_photo-1664910881558-45d8a08b78b6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8UHN5Y2hvbG9naWNhbCUyMENvdW5zZWxpbmclMjB3aXRoJTIwY2hpbGRyZW58ZW58MHx8MHx8fDA%3D",
     paragraphs: [
@@ -50,7 +46,6 @@ const servicesData = [
   },
   {
     title: "Parent and Caregiver Training",
-    icon: "👨‍👩‍👧",
     image:
       "https://images.unsplash.com/photo-1714646793441-38c8f94141f8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFyZW50JTIwdHJhaW5pbmclMjAoRXF1aXBzJTIwcGFyZW50cyUyMHdpdGglMjBzdHJhdGVnaWVzJTIwYW5kJTIwdG9vbHMlMjB0byUyMHN1cHBvcnQlMjB0aGVpciUyMGNoaWxkJ3MlMjBkZXZlbG9wbWVudCUyMGF0JTIwaG9tZSUyMGFuZCUyMGluJTIwc29jaWFsJTIwc2V0dGluZ3MuKXxlbnwwfHwwfHx8MA%3D%3D",
     paragraphs: [
@@ -61,7 +56,6 @@ const servicesData = [
   },
   {
     title: "Social Skills Training",
-    icon: "🤝",
     image:
       "https://plus.unsplash.com/premium_photo-1750767153031-2b9d8af33478?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8U29jaWFsJTIwU2tpbGxzJTIwVHJhaW5pbmd8ZW58MHx8MHx8fDA%3D",
     paragraphs: [
@@ -131,7 +125,6 @@ const Services = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <div className="text-4xl mb-2">{service.icon}</div>
           <h3 className="text-2xl font-semibold text-blue-700 mb-4">
             {service.title}
           </h3>

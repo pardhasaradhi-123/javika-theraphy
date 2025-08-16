@@ -99,7 +99,7 @@ const descriptions = {
       content: [
         "**Common Occupational Therapy Interventions for Autism:**",
         [
-          "**Occupational therapists assess individuals with autism across key areas:** social skills, communication, sensory processing, motor function, and cognitive ability.",
+          "Occupational therapists assess individuals with autism across key areas: social skills, communication, sensory processing, motor function, and cognitive ability.",
           "Standard tools used include the Childhood Autism Rating Scale (CARS), sensory profiles, and DSM-5-TR diagnostic criteria to identify specific challenges.",
           "Therapists collaborate with families to set personalized, measurable goals which shape a tailored therapy plan.",
           "The assessment outcomes guide the intervention strategy, focusing on skill development, sensory integration, and behavior regulation to promote independence and daily functioning.",
@@ -134,7 +134,7 @@ const descriptions = {
   "speech-therapy": {
     what: {
       images: [
-        "https://ideogram.ai/assets/progressive-image/balanced/response/vbV31DQrRYWAjPYHDILYIw",
+        "https://ideogram.ai/assets/progressive-image/balanced/response/4B8XyqXbSy2X_s2pTTU4Ow",
       ],
       content: [
         "Speech therapy, also known as speech-language therapy, is a type of treatment that addresses communication and swallowing difficulties. It's provided by a speech-language pathologist (SLP) (also called a speech therapist) to help individuals improve their ability to speak clearly, understand and express language, and safely swallow. ",
@@ -144,7 +144,7 @@ const descriptions = {
           "**Speech Sounds:** Difficulty producing sounds correctly, which can involve substitutions, distortions, or omissions. ",
           "**Fluency:** Stuttering or cluttering, where speech may be interrupted by repetitions, prolongations, or excessive pauses.",
           "**Voice:** Problems with voice quality, pitch, or loudness. ",
-          "**Language: Difficulties understanding spoken or written language (receptive language) or expressing thoughts and ideas (expressive language). ",
+          "**Language:** Difficulties understanding spoken or written language (receptive language) or expressing thoughts and ideas (expressive language). ",
           "**Swallowing:** Difficulty swallowing, which can affect nutrition and safety.",
           "**Cognitive-Communication:** Challenges with thinking, memory, and problem-solving that impact communication. ",
         ],
@@ -246,7 +246,7 @@ const descriptions = {
     },
     assessment: {
       images: [
-        "https://cdn3.mage.space/temp/30d/creations/vQbjWHnZOHg2gyrNODoJvcGUKJE2/image/e396f52418b147c384198a3a23375c65.jpg",
+        "https://ideogram.ai/assets/progressive-image/balanced/response/oLNJS7dBScuyo0Fy-_3uEg",
       ],
       content: [
         "**Assessment Measures**",
@@ -389,6 +389,26 @@ function renderWithBold(text) {
   );
 }
 
+const formatTherapyType = (type) => {
+  if (!type) return "";
+  switch (type) {
+    case "aba-therapy":
+      return "ABA Therapy";
+    case "occupational-therapy":
+      return "Occupational Therapy";
+    case "speech-therapy":
+      return "Speech Therapy";
+    case "psychological-counselling":
+      return "Psychological Counselling";
+    case "parent-and-caregiver-training":
+      return "Parent and Caregiver Training";
+    case "social-skills-training":
+      return "Social Skills Training";
+    default:
+      return type.replace("-", " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+};
+
 export default function TherapyPage() {
   const { type, section } = useParams();
   const rawSection = descriptions?.[type]?.[section];
@@ -423,11 +443,12 @@ export default function TherapyPage() {
         </div>
         <div>
           <h1
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700 mb-6 capitalize"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700 mb-6"
             data-aos="fade-right"
           >
-            {section?.replace("-", " ")} - {type?.replace("-", " ")}
+            {section?.replace("-", " ")} - {formatTherapyType(type)}
           </h1>
+
           {content.map((item, idx) => {
             if (typeof item === "string") {
               return (
