@@ -443,7 +443,7 @@ export default function TherapyPage() {
         </div>
         <div>
           <h1
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700 mb-6"
+            className="text-xl sm:text-2xl md:text-5xl font-bold text-blue-700 mb-6"
             data-aos="fade-right"
           >
             {section?.replace("-", " ")} - {formatTherapyType(type)}

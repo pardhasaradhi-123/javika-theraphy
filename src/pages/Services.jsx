@@ -125,7 +125,7 @@ const Services = () => {
         </div>
 
         <div className="w-full md:w-1/2">
-          <h3 className="text-2xl font-semibold text-blue-700 mb-4">
+          <h3 className="text-4xl font-semibold text-blue-700 mb-4">
             {service.title}
           </h3>
           {service.paragraphs.map((para, i) => (
