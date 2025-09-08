@@ -9,24 +9,26 @@ import About from "./pages/About";
 import AssessmentPage from "./pages/AssessmentPage";
 import CareersPage from "./pages/CareersPage";
 import TherapyPage from "./components/TherapyPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
+        {/* <Navbar /> */}
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/assessment" element={<AssessmentPage />} />
-            <Route path="/career" element={<CareersPage />} />
-            <Route path="/therapy/:type/:section" element={<TherapyPage />} />
+            <Route path="*" element={<NotFound />} />
+            {/* <Route path="/" element={<Home />} /> */}
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/contact" element={<Contact />} /> */}
+            {/* <Route path="/services" element={<Services />} /> */}
+            {/* <Route path="/assessment" element={<AssessmentPage />} /> */}
+            {/* <Route path="/career" element={<CareersPage />} /> */}
+            {/* <Route path="/therapy/:type/:section" element={<TherapyPage />} /> */}
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );
